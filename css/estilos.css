@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Kurale&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../assets/img/madera.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.contenedorGrid {
+  display: grid;
+  grid-template-areas: "nav nav nav"
+  "header header header"
+  "main main aside"
+  "main main aside"
+  "footer footer footer" ;
+}
+nav {
+  grid-area: nav;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2%;
+  text-align: center;
+}
+.imagen__nav {
+  width: 12%;
+  border: solid 1px black;
+  border-radius: 50%;
+  margin-right: 30%;
+}
+.transicion__img{
+  animation-name: girarImg;
+  animation-duration: 3s;
+}
+nav ul li {
+  margin-left: 5%;
+  list-style: none;
+  padding: 2%;
+  font-weight: bold;
+  font-family: "kurale";
+}
+nav ul li a {
+  text-decoration:double;
+  color: black;  
+}
+.subrayado:hover{
+  border-bottom: 3px solid rgb(255, 133, 133);
+}
+header {
+  grid-area: header;
+  text-align: center;
+  height: 20%;
+}
+.slogan {
+  margin: 1%;
+  margin-bottom: 5%;
+  font-family: "Raleway";
+
+  animation-duration: 3s;
+
+  animation-iteration-count: initial;
+  animation-timing-function: ease-in;
+}
+.carrusel {
+  width: 60%;
+  margin: 2% 20%;
+}
+main {
+  grid-area: main;
+}
+.separador {
+  display: flex;
+}
+.articuloUno {
+  width: 50%;
+  margin: 5%;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(236, 252, 167);
+}
+.articuloUno:hover {
+  transition: 2s;
+  transform:scale(1.2);
+  background-color: rgb(233, 247, 39);
+}
+.articuloUno__titulo {
+  text-align: center;
+  margin: 2%;
+  font-family: "Raleway";
+}
+.articuloUno__titulo__anclaje {
+  text-decoration:double;
+  color: black;
+}
+.articuloUno__foto {
+  width: 90%;
+  margin: 2%;
+}
+.articuloUno__parrafo {
+  font-family: 'Merriweather', serif;
+  margin: 1%;
+}
+.articuloDos {
+  width: 50%;
+  margin: 5%;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(236, 252, 167);
+}
+.articuloDos:hover {
+  transition: 2s;
+  transform:scale(1.2);
+  background-color: rgb(233, 247, 39);
+}
+.articuloDos__titulo {
+  text-align: center;
+  margin: 2%;
+  font-family: "Raleway";
+}
+.articuloDos__titulo__anclaje {
+  text-decoration:double;
+  color: black;
+}
+.articuloDos__foto {
+  width: 90%;
+  margin: 14% 2% 0 2%;
+}
+.articuloDos__parrafo {
+  font-family: 'Merriweather', serif;
+  margin: 1%;
+}
+.articuloTres {
+  width: 96%;
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+}
+.articuloTres__titulo {
+  font-family: "Raleway";
+  margin: 2%;
+}
+.articuloTres__foto {
+  width: 30%;
+  margin: 2%;
+}
+.articuloTres__parrafo {
+  font-family: 'Merriweather', serif;
+  margin: 1%;
+}
+aside {
+  grid-area: aside;
+  width: 90%;
+  display: flex;
+  justify-content: center;  
+  margin: 5%;
+}
+.barraLateral {
+  text-align: center;
+}
+.marco {
+  width: 90%;
+  padding: 1%;
+  background-color: rgb(245, 233, 196);
+  font-weight: bolder;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid black;
+}
+legend {
+  text-align: start;
+}
+.separadorBotones {
+  margin: 10%;
+}
+.subrayado__input {
+  border: none;
+}
+.subrayado__input:hover {
+  border-bottom: 2px solid black;
+}
+footer {
+  grid-area: footer;
+  background-color: rgb(85, 78, 78);
+  text-align: center;
+  padding: 30px;
+  font-family: "kurale";
+  font-weight: bolder;
+  color: white;
+
+}
+.footer__secundario {
+  position: relative;
+  width: 100%;
+  top: 61vh;
+}
+.zoom__card:hover {
+  transition: 0.5s;
+  transform:scale(1.08);
+}
+@keyframes girarImg{
+  0%{rotate: 0px;}
+  100%{rotate: 360deg;}
+}
+/*CONTENEDOR PARA PÁGINA DE PRODUCTOS*/
+@media screen and (max-width: 768px) {
+  .contenedorGrid {
+    grid-template-areas: "nav"
+    "header"
+    "main"
+    "aside"
+    "footer";
+  }
+.imagen__nav {
+  width: 20%;
+}
+}
