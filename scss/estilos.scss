@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Kurale&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import "variables";
+@import "mixins";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../assets/img/madera.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.contenedorGrid {
+  display: grid;
+  grid-template-areas: "nav nav nav"
+  "header header header"
+  "main main aside"
+  "main main aside"
+  "footer footer footer" ;
+}
+nav {
+  grid-area: nav;
+  width: 95%;
+  display: flex;
+  justify-content: $espaciado-between;
+  margin: $margen-chico;
+  text-align: $centrado;
+    .imagen__nav {
+      width: 12%;
+      border: solid 1px $color-negro;
+      border-radius: 50%;
+      margin-right: 30%;
+    }
+}
+.transicion__img{
+  animation-name: girarImg;
+  animation-duration: 3s;
+}
+nav ul li {
+  margin-left: $margen-grande;
+  list-style: none;
+  padding: $margen-chico;
+  font-weight: bold;
+  font-family: map-get($tipografias, letra-nav);
+    a {
+      text-decoration:double;
+      color: $color-negro;  
+    }
+}
+.subrayado:hover{
+  border-bottom: 3px solid $color-rosa;
+}
+header {
+  grid-area: header;
+  text-align: $centrado;
+  height: 20%;
+
+    .slogan {
+    margin: 1%;
+    margin-bottom: $margen-grande;
+    font-family:  map-get($tipografias, letra-titulos);
+
+    animation-duration: 3s;
+  
+    animation-iteration-count: initial;
+    animation-timing-function: ease-in;
+    }
+    .carrusel {
+      width: 60%;
+      margin: $margen-chico 20%;   
+    }
+}
+main {
+  grid-area: main;
+    .separador {
+        display: flex;
+        .articuloUno {
+            width: 50%;
+            margin: $margen-grande;
+            padding: 10px;
+            text-align: $centrado;
+            background-color: $color-cremita;
+                &:hover {
+                    transition: 2s;
+                    transform:scale(1.2);
+                    background-color: $color-amarillo;
+                }
+                .articuloUno__titulo {
+                  text-align: $centrado;
+                  margin: $margen-chico;
+                  font-family:  map-get($tipografias, letra-titulos);
+                }
+                .articuloUno__titulo__anclaje {
+                  text-decoration:double;
+                  color: $color-negro;
+                }
+                .articuloUno__foto {
+                  width: 90%;
+                  margin: $margen-chico;
+                }
+            }
+            .articuloDos {
+                @extend .articuloUno;
+                &:hover {
+                    transition: 2s;
+                    transform:scale(1.2);
+                    background-color: $color-amarillo;
+                }
+                .articuloDos__titulo {
+                  @extend .articuloUno__titulo;
+                }
+                .articuloDos__titulo__anclaje {
+                  @extend .articuloUno__titulo__anclaje;
+                }
+                .articuloDos__foto {
+                  width: 90%;
+                  margin: 14% $margen-chico 0 $margen-chico;
+                }
+            }
+    }
+    .articuloTres {
+      width: 96%;
+      margin: $margen-chico;
+      padding: $margen-chico;
+      text-align: $centrado;
+        .articuloTres__titulo {
+          font-family:  map-get($tipografias, letra-titulos);
+          margin: $margen-chico;
+        }
+        .articuloTres__foto {
+          width: 30%;
+          margin: $margen-chico;
+        }
+        .articuloTres__parrafo {
+          font-family:  map-get($tipografias, letra-parrafo);
+          margin: 1%;
+        }
+    }
+}
+/*ESTILOS PARA LA BARRA LATERAL*/
+aside {
+  grid-area: aside;
+  width: 90%;
+  display: flex;
+  justify-content: $centrado;  
+  margin: $margen-grande;
+    .barraLateral {
+    text-align: $centrado;
+        .marco {
+          width: 90%;
+          padding: 1%;
+          background-color: $color-rosa-claro;
+          font-weight: bolder;
+          font-family:  map-get($tipografias, letra-barra-lateral);
+          border: 1px solid $color-negro;
+          legend {
+            text-align: $comienzo;
+          }
+        }
+    }
+}
+.separadorBotones {
+  margin: 10%;
+}
+.subrayado__input {
+  border: none;
+}
+.subrayado__input:hover {
+  border-bottom: 2px solid $color-negro;
+}
+/*ESTILO PARA EL FOOTER*/
+footer {
+  grid-area: footer;
+  background-color: $color-gris;
+  text-align: $centrado;
+  padding: 30px;
+  font-family:  map-get($tipografias, letra-nav);
+  font-weight: bolder;
+  color: $color-blanco;
+}
+/*ESTILOS PARA LA PÁGINA DE ENVÍOS*/
+.mainEnvios {
+  display: flex;
+    .mainEnvios__divisor {
+      width: 50%;
+      background-color: $color-azul;
+      color: $color-blanco;
+      text-align: start;
+      padding: 12%;
+        .mainEnvios__divisor__titulo {
+        border-top: solid 2px $color-amarillo;
+          padding: $margen-grande 0;
+        }
+        .mainEnvios__divisor__card {
+          display: inline-flex;
+          justify-content: $centrado;
+          align-items: $centrado;
+            .mainEnvios__divisor__card__img {
+              width: 30%; 
+              margin: 10%;
+            }
+        }
+    }
+    .mainEnvios__img {
+        width: 50%;
+    }
+}
+/*ESTILO PARA LA PÁGINA "CONTACTO" */
+.main__contacto {
+    flex-direction: column;
+    width: 100%;
+    @include flex-justify-align ($centrado, $centrado);
+    .main__contacto__div {
+      margin: 0 $margen-chico;
+      padding: 4%;
+      width: 95%;
+      border-top: 3px solid $color-marron-claro;
+      @include flex-justify-align ($centrado, $centrado);
+        .main__contacto__divisor {
+          display: flex;
+          width: 100%;
+          align-items: $centrado;
+            .main__contacto__img {
+              width: 10%;
+              margin: 15px;
+            }
+            .main__contacto__titulo {
+              margin: 20px 0;
+            }
+        }
+    }
+    .main__contacto__fieldset {
+        border: 1px solid $color-marron-claro;
+        width: 75%;
+        padding: $margen-chico;
+        background-color: $color-marron-oscuro;
+        margin: $margen-chico 0;
+      }
+}
+
+/*ESTILOS PARA LA PÁGINA COMBOS*/
+.mainCombos {
+    @include flex-justify-align ($centrado, $centrado);
+    flex-wrap: wrap;
+    .main__articulo {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: $centrado;
+      align-items: $centrado;
+      border: 3px solid $color-marron-claro;
+      border-radius: 25%;
+      margin: $margen-chico;
+      padding: $margen-chico 0;
+      background-color: $color-marron-oscuro;
+        .main__articulo__titulo {
+          text-align: $centrado;
+          border-bottom: 1px solid $color-negro;
+        }
+        .main__articulo__img {
+          width: 30%;
+          margin: $margen-grande 0;
+        }
+    }
+}
+/*EFECTO PARA LAS CARD DE LA PÁGINA PRODUCTOS*/
+.zoom__card:hover {
+  transition: 0.5s;
+  transform:scale(1.08);
+}
+/*EFECTO PARA QUE GIRE EL LOGO*/
+@keyframes girarImg{
+  0%{rotate: 0px;}
+  100%{rotate: 360deg;}
+}
+/*CONTENEDOR PARA PÁGINA DE PRODUCTOS*/
+@media screen and (max-width: 768px) {
+  .contenedorGrid {
+    grid-template-areas: "nav"
+    "header"
+    "main"
+    "aside"
+    "footer";
+  }
+    .imagen__nav {
+    width: 20%;
+    }
+/*MEDIAS QUARIES PARA PÁGINA ENVÍOS*/
+    .mainEnvios {
+        display: block;
+        .mainEnvios__divisor {
+          width: 100%;
+        }
+        .mainEnvios__img {
+          width: 100%;
+        }
+    }
+/*MEDIAS QUARIES PARA PÁGINA CONTACTO*/
+    .main__contacto__div {
+      flex-wrap: wrap;
+      justify-content: $centrado;
+      align-items: $centrado;
+    }
+    .main__contacto__divisor {
+        justify-content: $centrado;
+      }
+/*MEDIAS QUARIES PARA PÁGINA COMBOS*/
+    .mainCombos {
+        flex-direction: column;
+        align-items: $centrado;
+        .main__articulo {
+            width: 80%;
+        }
+    }
+}

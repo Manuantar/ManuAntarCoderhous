@@ -1,0 +1,32 @@
+/*COLORES*/
+
+$color-amarillo: rgb(233, 247, 39);
+$color-cremita: rgb(236, 252, 167);
+$color-rosa: rgb(255, 133, 133);
+$color-negro: black;
+$color-rosa-claro: rgb(245, 233, 196);
+$color-gris: rgb(85, 78, 78);
+$color-blanco: white;
+$color-azul: rgb(102, 77, 161);
+$color-marron-claro: rgb(214, 141, 6);
+$color-marron-oscuro: rgba(255, 184, 91, 0.363);
+
+/*MARGENES*/
+
+$margen-chico: 2%;
+$margen-grande: 5%;
+
+/*ALINEACIONES*/
+
+$centrado: center;
+$espaciado-between: space-between;
+$comienzo: start;
+
+/*MAP DE TIPOGRAFIAS*/
+
+$tipografias:(
+    letra-nav: "kurale",
+    letra-titulos: "Raleway",
+    letra-parrafo: "Merriweather",
+    letra-barra-lateral: "Open Sans"
+);
