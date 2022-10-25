@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("../assets/img/madera.png");
+  background-image: url("../assets/img/madera_1.webp");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -21,35 +21,40 @@ body {
 }
 nav {
   grid-area: nav;
-  width: 95%;
+  width: 100%;
   display: flex;
-  justify-content: $espaciado-between;
-  margin: $margen-chico;
-  text-align: $centrado;
-    .imagen__nav {
-      width: 12%;
-      border: solid 1px $color-negro;
-      border-radius: 50%;
-      margin-right: 30%;
-    }
-}
-.transicion__img{
-  animation-name: girarImg;
-  animation-duration: 3s;
-}
-nav ul li {
-  margin-left: $margen-grande;
-  list-style: none;
-  padding: $margen-chico;
-  font-weight: bold;
-  font-family: map-get($tipografias, letra-nav);
-    a {
-      text-decoration:double;
+  justify-content: space-between;
+
+  .enlace__nav {
+    width: 15%;
+    margin-right: 25%;
+  }
+  .imagen__nav {
+    width: 100%;
+    border: solid 1px $color-negro;
+    border-radius: 50%;
+  }
+  .transicion__img{
+    animation-name: girarImg;
+    animation-duration: 3s;
+  }
+  ul li {
+    list-style: none;
+    font-weight: bolder;
+    font-family: map-get($tipografias, letra-nav);
+    margin-right: 4%;
+      a {
+        text-decoration:double;
+        color: $color-negro;  
       color: $color-negro;  
-    }
+        color: $color-negro;  
+      color: $color-negro;  
+        color: $color-negro;  
+      }
+  }
 }
 .subrayado:hover{
-  border-bottom: 3px solid $color-rosa;
+  border-bottom: 3px solid $color-marron-claro;
 }
 header {
   grid-area: header;
@@ -76,15 +81,16 @@ main {
     .separador {
         display: flex;
         .articuloUno {
-            width: 50%;
             margin: $margen-grande;
             padding: 10px;
             text-align: $centrado;
-            background-color: $color-cremita;
+            background-color: $color-marron-oscuro;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.5);  
+            border: 1px solid black;       
                 &:hover {
                     transition: 2s;
                     transform:scale(1.2);
-                    background-color: $color-amarillo;
+                    box-shadow: 5px 5px 20px rgba(0,0,0,1); 
                 }
                 .articuloUno__titulo {
                   text-align: $centrado;
@@ -105,7 +111,8 @@ main {
                 &:hover {
                     transition: 2s;
                     transform:scale(1.2);
-                    background-color: $color-amarillo;
+                    box-shadow: 5px 5px 20px rgba(0,0,0,1); 
+
                 }
                 .articuloDos__titulo {
                   @extend .articuloUno__titulo;
@@ -114,8 +121,7 @@ main {
                   @extend .articuloUno__titulo__anclaje;
                 }
                 .articuloDos__foto {
-                  width: 90%;
-                  margin: 14% $margen-chico 0 $margen-chico;
+                  @extend .articuloUno__foto
                 }
             }
     }
@@ -145,23 +151,24 @@ aside {
   display: flex;
   justify-content: $centrado;  
   margin: $margen-grande;
+  align-items: center;
     .barraLateral {
     text-align: $centrado;
         .marco {
           width: 90%;
           padding: 1%;
-          background-color: $color-rosa-claro;
+          background-color: $color-marron-oscuro;
           font-weight: bolder;
           font-family:  map-get($tipografias, letra-barra-lateral);
           border: 1px solid $color-negro;
           legend {
             text-align: $comienzo;
           }
+          .separadorBotones {
+            margin: 10%;
+          }
         }
     }
-}
-.separadorBotones {
-  margin: 10%;
 }
 .subrayado__input {
   border: none;
@@ -172,12 +179,57 @@ aside {
 /*ESTILO PARA EL FOOTER*/
 footer {
   grid-area: footer;
-  background-color: $color-gris;
+  background-color: $color-negro;
   text-align: $centrado;
-  padding: 30px;
-  font-family:  map-get($tipografias, letra-nav);
+  font-family:  map-get($tipografias, letra-titulos);
   font-weight: bolder;
   color: $color-blanco;
+  .footer__logo{
+    width: 3%;
+    margin: 1%;
+    transition: all 400ms ease;
+  }
+  .footer__logo:hover {
+    transform: translateY(-5px);
+  }
+  .footer__menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .footer__menu__item{
+      list-style: none;
+      margin: 1%;
+        a {
+          text-decoration:none;
+          color: $color-blanco;
+        }
+        a:hover {
+          color:blue;
+          border-bottom: 2px solid blue;
+        }
+    }
+  }
+}
+/*ESTILOS PARA PÁGINA ERROR*/
+.error__main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .error__main__img{
+    width: 50%;
+    margin: 2%;
+  }
+  .error__main__parrafo{
+    font-weight: bold;
+    text-align: center;
+  }
+}
+/*ESTILOS PARA PÁGINA NOSOTROS*/
+.main__nosotros__form{
+  border: 1px solid $color-marron-claro;
+  padding: $margen-chico;
+  background-color: $color-marron-oscuro;
+  margin: $margen-chico 0;
 }
 /*ESTILOS PARA LA PÁGINA DE ENVÍOS*/
 .mainEnvios {
@@ -236,6 +288,13 @@ footer {
         padding: $margen-chico;
         background-color: $color-marron-oscuro;
         margin: $margen-chico 0;
+        .main__contacto__fieldset__pregunta{
+          padding: $margen-chico;
+          text-align: center;
+          margin: 2%;
+          color: $color-blanco;
+          background-color: rgba(0, 0, 0, 0.514);
+        }
       }
 }
 
@@ -274,7 +333,6 @@ footer {
   0%{rotate: 0px;}
   100%{rotate: 360deg;}
 }
-/*CONTENEDOR PARA PÁGINA DE PRODUCTOS*/
 @media screen and (max-width: 768px) {
   .contenedorGrid {
     grid-template-areas: "nav"
@@ -283,9 +341,36 @@ footer {
     "aside"
     "footer";
   }
-    .imagen__nav {
-    width: 20%;
+  .enlace__nav {
+    width: 10%;
+    margin-right: 30%;
+  }
+  .imagen__nav{
+    width: 14%;
+  }
+  aside {
+    margin: 0;
+    width: 100%;
+    .barraLateral {
+      display: flex;
+      justify-content: center;
+      margin: 0;
     }
+  }
+  footer {
+    margin: 0;
+    .footer__menu {
+      padding: 0%;
+    }
+    .footer__menu__item{
+      margin: 0%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  a .footer__logo{
+    width: 6%;
+  }
 /*MEDIAS QUARIES PARA PÁGINA ENVÍOS*/
     .mainEnvios {
         display: block;
@@ -313,4 +398,18 @@ footer {
             width: 80%;
         }
     }
+}
+@media screen and (max-width: 576px){
+  .separador {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .articuloUno {
+    width: 80%;
+  }
+  .footer__menu{
+    flex-direction: column;
+    justify-content: center;
+  }
 }

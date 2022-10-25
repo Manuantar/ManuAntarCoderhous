@@ -10,7 +10,7 @@
   box-sizing: border-box; }
 
 body {
-  background-image: url("../assets/img/madera.png");
+  background-image: url("../assets/img/madera_1.webp");
   background-repeat: no-repeat;
   background-attachment: fixed; }
 
@@ -20,33 +20,34 @@ body {
 
 nav {
   grid-area: nav;
-  width: 95%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin: 2%;
-  text-align: center; }
+  justify-content: space-between; }
+  nav .enlace__nav {
+    width: 15%;
+    margin-right: 25%; }
   nav .imagen__nav {
-    width: 12%;
+    width: 100%;
     border: solid 1px black;
-    border-radius: 50%;
-    margin-right: 30%; }
-
-.transicion__img {
-  animation-name: girarImg;
-  animation-duration: 3s; }
-
-nav ul li {
-  margin-left: 5%;
-  list-style: none;
-  padding: 2%;
-  font-weight: bold;
-  font-family: "kurale"; }
-  nav ul li a {
-    text-decoration: double;
-    color: black; }
+    border-radius: 50%; }
+  nav .transicion__img {
+    animation-name: girarImg;
+    animation-duration: 3s; }
+  nav ul li {
+    list-style: none;
+    font-weight: bolder;
+    font-family: "kurale";
+    margin-right: 4%; }
+    nav ul li a {
+      text-decoration: double;
+      color: black;
+      color: black;
+      color: black;
+      color: black;
+      color: black; }
 
 .subrayado:hover {
-  border-bottom: 3px solid #ff8585; }
+  border-bottom: 3px solid #d68d06; }
 
 header {
   grid-area: header;
@@ -68,15 +69,16 @@ main {
   main .separador {
     display: flex; }
     main .separador .articuloUno, main .separador .articuloDos {
-      width: 50%;
       margin: 5%;
       padding: 10px;
       text-align: center;
-      background-color: #ecfca7; }
+      background-color: rgba(255, 184, 91, 0.363);
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+      border: 1px solid black; }
       main .separador .articuloUno:hover, main .separador .articuloDos:hover {
         transition: 2s;
         transform: scale(1.2);
-        background-color: #e9f727; }
+        box-shadow: 5px 5px 20px black; }
       main .separador .articuloUno .articuloUno__titulo, main .separador .articuloDos .articuloUno__titulo, main .separador .articuloDos .articuloDos__titulo {
         text-align: center;
         margin: 2%;
@@ -84,16 +86,13 @@ main {
       main .separador .articuloUno .articuloUno__titulo__anclaje, main .separador .articuloDos .articuloUno__titulo__anclaje, main .separador .articuloDos .articuloDos__titulo__anclaje {
         text-decoration: double;
         color: black; }
-      main .separador .articuloUno .articuloUno__foto, main .separador .articuloDos .articuloUno__foto {
+      main .separador .articuloUno .articuloUno__foto, main .separador .articuloDos .articuloUno__foto, main .separador .articuloDos .articuloDos__foto {
         width: 90%;
         margin: 2%; }
     main .separador .articuloDos:hover {
       transition: 2s;
       transform: scale(1.2);
-      background-color: #e9f727; }
-    main .separador .articuloDos .articuloDos__foto {
-      width: 90%;
-      margin: 14% 2% 0 2%; }
+      box-shadow: 5px 5px 20px black; }
   main .articuloTres {
     width: 96%;
     margin: 2%;
@@ -115,21 +114,21 @@ aside {
   width: 90%;
   display: flex;
   justify-content: center;
-  margin: 5%; }
+  margin: 5%;
+  align-items: center; }
   aside .barraLateral {
     text-align: center; }
     aside .barraLateral .marco {
       width: 90%;
       padding: 1%;
-      background-color: #f5e9c4;
+      background-color: rgba(255, 184, 91, 0.363);
       font-weight: bolder;
       font-family: "Open Sans";
       border: 1px solid black; }
       aside .barraLateral .marco legend {
         text-align: start; }
-
-.separadorBotones {
-  margin: 10%; }
+      aside .barraLateral .marco .separadorBotones {
+        margin: 10%; }
 
 .subrayado__input {
   border: none; }
@@ -140,12 +139,49 @@ aside {
 /*ESTILO PARA EL FOOTER*/
 footer {
   grid-area: footer;
-  background-color: #554e4e;
+  background-color: black;
   text-align: center;
-  padding: 30px;
-  font-family: "kurale";
+  font-family: "Raleway";
   font-weight: bolder;
   color: white; }
+  footer .footer__logo {
+    width: 3%;
+    margin: 1%;
+    transition: all 400ms ease; }
+  footer .footer__logo:hover {
+    transform: translateY(-5px); }
+  footer .footer__menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    footer .footer__menu .footer__menu__item {
+      list-style: none;
+      margin: 1%; }
+      footer .footer__menu .footer__menu__item a {
+        text-decoration: none;
+        color: white; }
+      footer .footer__menu .footer__menu__item a:hover {
+        color: blue;
+        border-bottom: 2px solid blue; }
+
+/*ESTILOS PARA PÁGINA ERROR*/
+.error__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .error__main .error__main__img {
+    width: 50%;
+    margin: 2%; }
+  .error__main .error__main__parrafo {
+    font-weight: bold;
+    text-align: center; }
+
+/*ESTILOS PARA PÁGINA NOSOTROS*/
+.main__nosotros__form {
+  border: 1px solid #d68d06;
+  padding: 2%;
+  background-color: rgba(255, 184, 91, 0.363);
+  margin: 2% 0; }
 
 /*ESTILOS PARA LA PÁGINA DE ENVÍOS*/
 .mainEnvios {
@@ -199,6 +235,12 @@ footer {
     padding: 2%;
     background-color: rgba(255, 184, 91, 0.363);
     margin: 2% 0; }
+    .main__contacto .main__contacto__fieldset .main__contacto__fieldset__pregunta {
+      padding: 2%;
+      text-align: center;
+      margin: 2%;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.514); }
 
 /*ESTILOS PARA LA PÁGINA COMBOS*/
 .mainCombos {
@@ -236,12 +278,31 @@ footer {
   100% {
     rotate: 360deg; } }
 
-/*CONTENEDOR PARA PÁGINA DE PRODUCTOS*/
 @media screen and (max-width: 768px) {
   .contenedorGrid {
     grid-template-areas: "nav" "header" "main" "aside" "footer"; }
+  .enlace__nav {
+    width: 10%;
+    margin-right: 30%; }
   .imagen__nav {
-    width: 20%; }
+    width: 14%; }
+  aside {
+    margin: 0;
+    width: 100%; }
+    aside .barraLateral {
+      display: flex;
+      justify-content: center;
+      margin: 0; }
+  footer {
+    margin: 0; }
+    footer .footer__menu {
+      padding: 0%; }
+    footer .footer__menu__item {
+      margin: 0%;
+      display: flex;
+      justify-content: center; }
+  a .footer__logo {
+    width: 6%; }
   /*MEDIAS QUARIES PARA PÁGINA ENVÍOS*/
   .mainEnvios {
     display: block; }
@@ -262,3 +323,14 @@ footer {
     align-items: center; }
     .mainCombos .main__articulo {
       width: 80%; } }
+
+@media screen and (max-width: 576px) {
+  .separador {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; }
+  .articuloUno, main .separador .articuloDos {
+    width: 80%; }
+  .footer__menu {
+    flex-direction: column;
+    justify-content: center; } }
